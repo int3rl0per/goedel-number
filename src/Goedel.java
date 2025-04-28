@@ -28,9 +28,9 @@ public class Goedel {
             int initialState = sc.nextInt();
 
             // Read Tape Symbol
-            System.out.print("Read Tape Symbol (0/1/_): ");
-            while (!sc.hasNext("[01_]")) {
-                System.out.print("Please enter a valid character (0/1/_): ");
+            System.out.print("Read Tape Symbol (0/1/_/a-z): ");
+            while (!sc.hasNext("[0|1|_|a-z]")) {
+                System.out.print("Please enter a valid character (0/1/_/a-z): ");
                 sc.next();
             }
             char readTapeSymbol = sc.next().charAt(0);
@@ -44,9 +44,9 @@ public class Goedel {
             int nextState = sc.nextInt();
 
             // Write Tape Symbol
-            System.out.print("Write Tape Symbol (0/1/_): ");
-            while (!sc.hasNext("[01_]")) {
-                System.out.print("Please enter a valid character (0/1/_): ");
+            System.out.print("Write Tape Symbol (0/1/_/a-z): ");
+            while (!sc.hasNext("[0|1|_|a-z]")) {
+                System.out.print("Please enter a valid character (0/1/_/a-z): ");
                 sc.next();
             }
             char writeTapeSymbol = sc.next().charAt(0);
@@ -88,6 +88,8 @@ public class Goedel {
                 case '0' -> stringBuilder.append('0');
                 case '1' -> stringBuilder.append("00");
                 case '_' -> stringBuilder.append("000");
+                case 'a' -> stringBuilder.append("0000");
+                case 'b' -> stringBuilder.append("00000");
             }
             stringBuilder.append('1');
 
@@ -100,6 +102,8 @@ public class Goedel {
                 case '0' -> stringBuilder.append('0');
                 case '1' -> stringBuilder.append("00");
                 case '_' -> stringBuilder.append("000");
+                case 'a' -> stringBuilder.append("0000");
+                case 'b' -> stringBuilder.append("00000");
             }
             stringBuilder.append('1');
 
